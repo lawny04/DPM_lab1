@@ -1,6 +1,7 @@
 package test;
 
 import carros.CarroBase;
+import carros.Crossover;
 import carros.Pickup;
 import carros.Sedan;
 import carros.Suv;
@@ -15,41 +16,21 @@ public class Test {
 	public static void main(String[] args) {
 	     //CarroBase carro = new CarroBase(); //composition
 	     //carro.imprimirCategoria();
-		 //System.out.println("*****hello world 2*****");
-	       
+
 		MotorGasolina motorGasolina = new MotorGasolina();//composicion
+		MotorDiesel diesel = new MotorDiesel();
 		
 		//inyectando una instancia de motor gasolina al carro sedan
 		//esto lo permite el polimorfismo
-		CarroBase carro = new Sedan(motorGasolina);//polimorfismo
-		carro.imprimirCategoria();
+		//CarroBase carro = new Sedan(motorGasolina);//polimorfismo
+		//carro.imprimirCategoria();
+
 		
-		
-		
-		
-		
-		
-		
-		/*MotorDiesel motorDiesel = new MotorDiesel();
-		carro = new Sedan(motorDiesel);//polimorfismo
-		carro.imprimirCategoria();
-		
-		
-		carro = new Pickup(motorGasolina);
-		carro.imprimirCategoria();
-		
-		carro = new Pickup(motorDiesel);
-		carro.imprimirCategoria();
-		
-		
-		carro = new Suv(motorDiesel);
-		carro.imprimirCategoria();
-		
-		carro = new Suv(motorGasolina);
-		carro.imprimirCategoria();
-		*/
-		
-		
+		/// objeto crossover
+		CarroBase crossover = new Crossover(motorGasolina);//polimorfismo
+		crossover.imprimirCategoria();
+		CarroBase crossoverD = new Crossover(diesel);//polimorfismo
+		crossoverD.imprimirCategoria();
 		
 	}
 	
